@@ -15,6 +15,17 @@
 		F7C8FDF81B2FE9C50053F72D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C8FDF71B2FE9C50053F72D /* Images.xcassets */; };
 		F7C8FDFB1B2FE9C50053F72D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7C8FDF91B2FE9C50053F72D /* LaunchScreen.xib */; };
 		F7C8FE071B2FE9C50053F72D /* iOSTranningMobileJujutsuProgramWeek1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE061B2FE9C50053F72D /* iOSTranningMobileJujutsuProgramWeek1Tests.m */; };
+		F7C8FE1B1B2FEE900053F72D /* MovieApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE1A1B2FEE900053F72D /* MovieApiClient.m */; };
+		F7C8FE221B2FEFC50053F72D /* MovieListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE201B2FEFC50053F72D /* MovieListViewController.m */; };
+		F7C8FE231B2FEFC50053F72D /* MovieListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7C8FE211B2FEFC50053F72D /* MovieListViewController.xib */; };
+		F7C8FE261B300F100053F72D /* MovieListJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE251B300F100053F72D /* MovieListJSONModel.m */; };
+		F7C8FE291B300F8A0053F72D /* MovieJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE281B300F8A0053F72D /* MovieJSONModel.m */; };
+		F7C8FE2C1B3010720053F72D /* LinkJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE2B1B3010720053F72D /* LinkJSONModel.m */; };
+		F7C8FE2F1B3033F50053F72D /* AbridgedCastJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE2E1B3033F50053F72D /* AbridgedCastJSONModel.m */; };
+		F7C8FE321B3034740053F72D /* PostersJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE311B3034740053F72D /* PostersJSONModel.m */; };
+		F7C8FE381B3035150053F72D /* ReleaseDatesJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE371B3035150053F72D /* ReleaseDatesJSONModel.m */; };
+		F7C8FE3B1B3035C80053F72D /* RatingsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE3A1B3035C80053F72D /* RatingsJSONModel.m */; };
+		F7C8FE421B303E260053F72D /* AlternateIdsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE411B303E260053F72D /* AlternateIdsJSONModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,27 @@
 		F7C8FE001B2FE9C50053F72D /* iOSTranningMobileJujutsuProgramWeek1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSTranningMobileJujutsuProgramWeek1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C8FE051B2FE9C50053F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C8FE061B2FE9C50053F72D /* iOSTranningMobileJujutsuProgramWeek1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSTranningMobileJujutsuProgramWeek1Tests.m; sourceTree = "<group>"; };
+		F7C8FE191B2FEE900053F72D /* MovieApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieApiClient.h; sourceTree = "<group>"; };
+		F7C8FE1A1B2FEE900053F72D /* MovieApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieApiClient.m; sourceTree = "<group>"; };
+		F7C8FE1F1B2FEFC50053F72D /* MovieListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListViewController.h; sourceTree = "<group>"; };
+		F7C8FE201B2FEFC50053F72D /* MovieListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListViewController.m; sourceTree = "<group>"; };
+		F7C8FE211B2FEFC50053F72D /* MovieListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieListViewController.xib; sourceTree = "<group>"; };
+		F7C8FE241B300F100053F72D /* MovieListJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE251B300F100053F72D /* MovieListJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE271B300F8A0053F72D /* MovieJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE281B300F8A0053F72D /* MovieJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE2A1B3010720053F72D /* LinkJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE2B1B3010720053F72D /* LinkJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE2D1B3033F50053F72D /* AbridgedCastJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbridgedCastJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE2E1B3033F50053F72D /* AbridgedCastJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbridgedCastJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE301B3034740053F72D /* PostersJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostersJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE311B3034740053F72D /* PostersJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostersJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE361B3035150053F72D /* ReleaseDatesJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReleaseDatesJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE371B3035150053F72D /* ReleaseDatesJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReleaseDatesJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE391B3035C80053F72D /* RatingsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingsJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE3A1B3035C80053F72D /* RatingsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingsJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE401B303E260053F72D /* AlternateIdsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlternateIdsJSONModel.h; sourceTree = "<group>"; };
+		F7C8FE411B303E260053F72D /* AlternateIdsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlternateIdsJSONModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +137,8 @@
 		F7C8FDE91B2FE9C50053F72D /* iOSTranningMobileJujutsuProgramWeek1 */ = {
 			isa = PBXGroup;
 			children = (
+				F7C8FE1C1B2FEFC50053F72D /* Views */,
+				F7C8FE181B2FEE900053F72D /* Libraries */,
 				F7C8FDEE1B2FE9C50053F72D /* AppDelegate.h */,
 				F7C8FDEF1B2FE9C50053F72D /* AppDelegate.m */,
 				F7C8FDF11B2FE9C50053F72D /* ViewController.h */,
@@ -141,6 +175,65 @@
 				F7C8FE051B2FE9C50053F72D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7C8FE181B2FEE900053F72D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F7C8FE191B2FEE900053F72D /* MovieApiClient.h */,
+				F7C8FE1A1B2FEE900053F72D /* MovieApiClient.m */,
+				F7C8FE3C1B3039730053F72D /* Jsonmodel */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		F7C8FE1C1B2FEFC50053F72D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7C8FE1D1B2FEFC50053F72D /* MovieDetail */,
+				F7C8FE1E1B2FEFC50053F72D /* MovieList */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7C8FE1D1B2FEFC50053F72D /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		F7C8FE1E1B2FEFC50053F72D /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				F7C8FE1F1B2FEFC50053F72D /* MovieListViewController.h */,
+				F7C8FE201B2FEFC50053F72D /* MovieListViewController.m */,
+				F7C8FE211B2FEFC50053F72D /* MovieListViewController.xib */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		F7C8FE3C1B3039730053F72D /* Jsonmodel */ = {
+			isa = PBXGroup;
+			children = (
+				F7C8FE401B303E260053F72D /* AlternateIdsJSONModel.h */,
+				F7C8FE411B303E260053F72D /* AlternateIdsJSONModel.m */,
+				F7C8FE281B300F8A0053F72D /* MovieJSONModel.m */,
+				F7C8FE301B3034740053F72D /* PostersJSONModel.h */,
+				F7C8FE311B3034740053F72D /* PostersJSONModel.m */,
+				F7C8FE361B3035150053F72D /* ReleaseDatesJSONModel.h */,
+				F7C8FE371B3035150053F72D /* ReleaseDatesJSONModel.m */,
+				F7C8FE391B3035C80053F72D /* RatingsJSONModel.h */,
+				F7C8FE3A1B3035C80053F72D /* RatingsJSONModel.m */,
+				F7C8FE241B300F100053F72D /* MovieListJSONModel.h */,
+				F7C8FE251B300F100053F72D /* MovieListJSONModel.m */,
+				F7C8FE271B300F8A0053F72D /* MovieJSONModel.h */,
+				F7C8FE2A1B3010720053F72D /* LinkJSONModel.h */,
+				F7C8FE2B1B3010720053F72D /* LinkJSONModel.m */,
+				F7C8FE2D1B3033F50053F72D /* AbridgedCastJSONModel.h */,
+				F7C8FE2E1B3033F50053F72D /* AbridgedCastJSONModel.m */,
+			);
+			name = Jsonmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +321,7 @@
 				F7C8FDF61B2FE9C50053F72D /* Main.storyboard in Resources */,
 				F7C8FDFB1B2FE9C50053F72D /* LaunchScreen.xib in Resources */,
 				F7C8FDF81B2FE9C50053F72D /* Images.xcassets in Resources */,
+				F7C8FE231B2FEFC50053F72D /* MovieListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,9 +372,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C8FE291B300F8A0053F72D /* MovieJSONModel.m in Sources */,
 				F7C8FDF31B2FE9C50053F72D /* ViewController.m in Sources */,
 				F7C8FDF01B2FE9C50053F72D /* AppDelegate.m in Sources */,
+				F7C8FE421B303E260053F72D /* AlternateIdsJSONModel.m in Sources */,
+				F7C8FE2C1B3010720053F72D /* LinkJSONModel.m in Sources */,
 				F7C8FDED1B2FE9C50053F72D /* main.m in Sources */,
+				F7C8FE221B2FEFC50053F72D /* MovieListViewController.m in Sources */,
+				F7C8FE3B1B3035C80053F72D /* RatingsJSONModel.m in Sources */,
+				F7C8FE381B3035150053F72D /* ReleaseDatesJSONModel.m in Sources */,
+				F7C8FE261B300F100053F72D /* MovieListJSONModel.m in Sources */,
+				F7C8FE2F1B3033F50053F72D /* AbridgedCastJSONModel.m in Sources */,
+				F7C8FE321B3034740053F72D /* PostersJSONModel.m in Sources */,
+				F7C8FE1B1B2FEE900053F72D /* MovieApiClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
