@@ -17,7 +17,8 @@
                                                        @"abridged_cast": @"abridgedCast",
                                                        @"alternate_ids": @"alternateIds",
                                                        @"critics_consensus": @"criticsConsensus",
-                                                       @"mpaa_rating": @"mpaaRating"
+                                                       @"mpaa_rating": @"mpaaRating",
+                                                       @"release_dates":@"releaseDates"
                                                        
                                                        }];
 }
