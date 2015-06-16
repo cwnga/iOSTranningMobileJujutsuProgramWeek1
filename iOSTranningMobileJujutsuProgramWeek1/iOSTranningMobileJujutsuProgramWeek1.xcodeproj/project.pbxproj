@@ -26,6 +26,11 @@
 		F7C8FE381B3035150053F72D /* ReleaseDatesJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE371B3035150053F72D /* ReleaseDatesJSONModel.m */; };
 		F7C8FE3B1B3035C80053F72D /* RatingsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE3A1B3035C80053F72D /* RatingsJSONModel.m */; };
 		F7C8FE421B303E260053F72D /* AlternateIdsJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE411B303E260053F72D /* AlternateIdsJSONModel.m */; };
+		F7C8FE491B30451B0053F72D /* MovieListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE471B30451B0053F72D /* MovieListViewCell.m */; };
+		F7C8FE4A1B30451B0053F72D /* MovieListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7C8FE481B30451B0053F72D /* MovieListViewCell.xib */; };
+		F7C8FE521B3049CF0053F72D /* CalculatorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE511B3049CF0053F72D /* CalculatorHelper.m */; };
+		F7C8FE551B3049E70053F72D /* NibSizeCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE541B3049E70053F72D /* NibSizeCalculator.m */; };
+		F7C8FE581B304A210053F72D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FE571B304A210053F72D /* BaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,15 @@
 		F7C8FE3A1B3035C80053F72D /* RatingsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingsJSONModel.m; sourceTree = "<group>"; };
 		F7C8FE401B303E260053F72D /* AlternateIdsJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlternateIdsJSONModel.h; sourceTree = "<group>"; };
 		F7C8FE411B303E260053F72D /* AlternateIdsJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlternateIdsJSONModel.m; sourceTree = "<group>"; };
+		F7C8FE461B30451B0053F72D /* MovieListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListViewCell.h; sourceTree = "<group>"; };
+		F7C8FE471B30451B0053F72D /* MovieListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListViewCell.m; sourceTree = "<group>"; };
+		F7C8FE481B30451B0053F72D /* MovieListViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieListViewCell.xib; sourceTree = "<group>"; };
+		F7C8FE501B3049CF0053F72D /* CalculatorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorHelper.h; sourceTree = "<group>"; };
+		F7C8FE511B3049CF0053F72D /* CalculatorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorHelper.m; sourceTree = "<group>"; };
+		F7C8FE531B3049E70053F72D /* NibSizeCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NibSizeCalculator.h; sourceTree = "<group>"; };
+		F7C8FE541B3049E70053F72D /* NibSizeCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NibSizeCalculator.m; sourceTree = "<group>"; };
+		F7C8FE561B304A210053F72D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		F7C8FE571B304A210053F72D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +194,7 @@
 		F7C8FE181B2FEE900053F72D /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F7C8FE4F1B3049CF0053F72D /* Utils */,
 				F7C8FE191B2FEE900053F72D /* MovieApiClient.h */,
 				F7C8FE1A1B2FEE900053F72D /* MovieApiClient.m */,
 				F7C8FE3C1B3039730053F72D /* Jsonmodel */,
@@ -192,6 +207,8 @@
 			children = (
 				F7C8FE1D1B2FEFC50053F72D /* MovieDetail */,
 				F7C8FE1E1B2FEFC50053F72D /* MovieList */,
+				F7C8FE561B304A210053F72D /* BaseViewController.h */,
+				F7C8FE571B304A210053F72D /* BaseViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +226,7 @@
 				F7C8FE1F1B2FEFC50053F72D /* MovieListViewController.h */,
 				F7C8FE201B2FEFC50053F72D /* MovieListViewController.m */,
 				F7C8FE211B2FEFC50053F72D /* MovieListViewController.xib */,
+				F7C8FE4B1B3045220053F72D /* Cells */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -234,6 +252,27 @@
 				F7C8FE2E1B3033F50053F72D /* AbridgedCastJSONModel.m */,
 			);
 			name = Jsonmodel;
+			sourceTree = "<group>";
+		};
+		F7C8FE4B1B3045220053F72D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F7C8FE461B30451B0053F72D /* MovieListViewCell.h */,
+				F7C8FE471B30451B0053F72D /* MovieListViewCell.m */,
+				F7C8FE481B30451B0053F72D /* MovieListViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		F7C8FE4F1B3049CF0053F72D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F7C8FE501B3049CF0053F72D /* CalculatorHelper.h */,
+				F7C8FE511B3049CF0053F72D /* CalculatorHelper.m */,
+				F7C8FE531B3049E70053F72D /* NibSizeCalculator.h */,
+				F7C8FE541B3049E70053F72D /* NibSizeCalculator.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C8FDF61B2FE9C50053F72D /* Main.storyboard in Resources */,
+				F7C8FE4A1B30451B0053F72D /* MovieListViewCell.xib in Resources */,
 				F7C8FDFB1B2FE9C50053F72D /* LaunchScreen.xib in Resources */,
 				F7C8FDF81B2FE9C50053F72D /* Images.xcassets in Resources */,
 				F7C8FE231B2FEFC50053F72D /* MovieListViewController.xib in Resources */,
@@ -377,11 +417,15 @@
 				F7C8FDF01B2FE9C50053F72D /* AppDelegate.m in Sources */,
 				F7C8FE421B303E260053F72D /* AlternateIdsJSONModel.m in Sources */,
 				F7C8FE2C1B3010720053F72D /* LinkJSONModel.m in Sources */,
+				F7C8FE491B30451B0053F72D /* MovieListViewCell.m in Sources */,
+				F7C8FE521B3049CF0053F72D /* CalculatorHelper.m in Sources */,
+				F7C8FE581B304A210053F72D /* BaseViewController.m in Sources */,
 				F7C8FDED1B2FE9C50053F72D /* main.m in Sources */,
 				F7C8FE221B2FEFC50053F72D /* MovieListViewController.m in Sources */,
 				F7C8FE3B1B3035C80053F72D /* RatingsJSONModel.m in Sources */,
 				F7C8FE381B3035150053F72D /* ReleaseDatesJSONModel.m in Sources */,
 				F7C8FE261B300F100053F72D /* MovieListJSONModel.m in Sources */,
+				F7C8FE551B3049E70053F72D /* NibSizeCalculator.m in Sources */,
 				F7C8FE2F1B3033F50053F72D /* AbridgedCastJSONModel.m in Sources */,
 				F7C8FE321B3034740053F72D /* PostersJSONModel.m in Sources */,
 				F7C8FE1B1B2FEE900053F72D /* MovieApiClient.m in Sources */,
