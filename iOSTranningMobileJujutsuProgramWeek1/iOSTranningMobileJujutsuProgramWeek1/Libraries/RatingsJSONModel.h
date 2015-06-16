@@ -11,9 +11,9 @@
 @end
 
 @interface RatingsJSONModel : JSONModel
-@property (strong, nonatomic) NSString *criticsRating;
-@property (strong, nonatomic) NSString *criticsScore;
-@property (strong, nonatomic) NSString *audienceRating;
-@property (strong, nonatomic) NSString *audienceScore;
+@property (strong, nonatomic) NSString <Optional> *criticsRating;
+@property (strong, nonatomic) NSString <Optional> *criticsScore;
+@property (strong, nonatomic) NSString <Optional> *audienceRating;
+@property (strong, nonatomic) NSString <Optional> *audienceScore;
 
 @end

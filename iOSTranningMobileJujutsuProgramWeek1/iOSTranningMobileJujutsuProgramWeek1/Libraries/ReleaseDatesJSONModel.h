@@ -12,6 +12,6 @@
 @end
 
 @interface ReleaseDatesJSONModel : JSONModel
-@property (strong, nonatomic) NSString *theater;
+@property (strong, nonatomic) NSString <Optional> *theater;
 
 @end

@@ -8,10 +8,13 @@
 
 #import "MovieListViewController.h"
 #import "MovieListViewCell.h"
-#import "MovieApiClient.h"
+#import "MovieListDataStore.h"
+#import "MovieJSONModel.h"
+#import "MovieDetailViewController.h"
 
 @interface MovieListViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) MovieListDataStore *movieListDataStore;
 
 @end
 
@@ -19,14 +22,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MovieApiClient *movieApiClient = [[MovieApiClient alloc]init];
-    [movieApiClient getMovieList:^(AFHTTPRequestOperation *operation, id responseObject) {
-       //
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-       //
+ 
+    
+    [self setupView];
+    self.movieListDataStore = [[MovieListDataStore alloc]init];
+
+        NSLog(@"parameter parameter ::%@", @"hihi");
+    [self.movieListDataStore loadNext:^(id responseObject) {
+    [self.collectionView reloadData];
+           NSLog(@"parameter parameter ::%@", @"hihi3");
+        
+    } failure:^(NSError *error) {
+        // [self.collectionView reloadData];
+           NSLog(@"parameter parameter ::%@", @"hih4");
         
     }];
-    [self setupView];
+    
+  
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -55,22 +68,27 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    NSLog(@"numberOfItemsInSection::%@", self.movieListDataStore.data);
+    return [self.movieListDataStore.data count];
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 0.0f;
+    return 0.1f;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 0.0f;
+    return 1.0f;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [[NibSizeCalculator sharedInstance] sizeForNibNamed:@"MovieListViewCell" withstyle:NibFixedHeightScaling];
+    CGSize result =  [[NibSizeCalculator sharedInstance] sizeForNibNamed:@"MovieListViewCell" withstyle:NibFixedHeightScaling];
+     return CGSizeMake(150 , 300);
+    
+   // CGSize result2 = [CGSize alloc]ini
+   // return result;
 }
 
 
@@ -78,12 +96,32 @@
 {
     
     MovieListViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieListViewCell" forIndexPath:indexPath];
-    cell.titleLabel.text = @"test1";
-    cell.rationLabel.text  = @"10";
-        cell.moveImageView.contentMode = UIViewContentModeCenter;
-    cell.moveImageView.image = [UIImage imageNamed:@"img-no_image"];
-    cell.moveImageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    MovieJSONModel *move = self.movieListDataStore.data[indexPath.row];
+    
+    cell.titleLabel.text = move.title;
+    cell.rationLabel.text  = move.ratings.criticsScore;
+    cell.runtimeLabel.text  = move.runtime;
+    [cell.movieImageView sd_setImageWithURL:[NSURL URLWithString:move.posters.thumbnail]
+                           placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                      if (!error) {
+                                          cell.movieImageView.image = image;
+                                          cell.movieImageView.contentMode = UIViewContentModeScaleAspectFill;
+                                      }
+                                      
+                                  }];
+    
+   //     cell.moveImageView.contentMode = UIViewContentModeCenter;
+  //  cell.moveImageView.image = [UIImage imageNamed:@"img-no_image"];
+   // cell.moveImageView.contentMode = UIViewContentModeScaleAspectFill;
     return cell;
 }
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MovieJSONModel *movieJSONModel = (MovieJSONModel *)self.movieListDataStore.data[indexPath.row];
+    MovieDetailViewController *vc = [[NSClassFromString(@"MovieDetailViewController") alloc] init];
+    vc.movieJSONModel = movieJSONModel;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

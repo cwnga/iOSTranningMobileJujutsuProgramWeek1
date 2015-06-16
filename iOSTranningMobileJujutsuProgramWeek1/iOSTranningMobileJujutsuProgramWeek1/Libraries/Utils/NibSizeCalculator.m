@@ -40,6 +40,7 @@
 
 - (CGSize)sizeForNibNamed:(NSString *)nibName withstyle:(NibSizeStyle)style
 {
+    NSLog(@"sizeForNibNamed");
     return [self sizeForNibNamed:nibName withstyle:style fitSize:screenSize()];
 }
 

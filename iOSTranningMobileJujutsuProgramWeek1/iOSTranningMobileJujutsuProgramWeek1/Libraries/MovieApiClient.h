@@ -11,7 +11,6 @@
 
 @interface MovieApiClient : NSObject
 
-- (void)getMovieList:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
-
+- (void)getMovieList:(NSMutableDictionary *)parameters success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+             failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 @end
