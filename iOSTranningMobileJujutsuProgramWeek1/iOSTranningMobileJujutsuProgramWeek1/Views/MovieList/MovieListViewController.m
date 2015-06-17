@@ -17,12 +17,18 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) MovieListDataStore *movieListDataStore;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *viewToggle;
+@property (nonatomic)        float          searchBarBoundsY;
+@property (nonatomic,strong) UISearchBar        *searchBar;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+
+
 @end
 
 @implementation MovieListViewController
 
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
  
     
@@ -31,7 +37,7 @@
 
         NSLog(@"parameter parameter ::%@", @"hihi");
    // [[UITabBar appearance] setTintColor:self.viewToggle.tintColor];
-    [SVProgressHUD setBackgroundColor:self.viewToggle.tintColor];
+    //[SVProgressHUD setBackgroundColor:self.viewToggle.tintColor];
    
     [self refreshData];
   
@@ -61,15 +67,19 @@
 
 - (void)setupView
 {
+    self.automaticallyAdjustsScrollViewInsets = YES;
+    
+    
+    [self addSearchBar];
     UINib *movieListCollectionViewCellNib = [UINib nibWithNibName:@"MovieListViewCell" bundle:nil];
     [self.collectionView registerNib:movieListCollectionViewCellNib forCellWithReuseIdentifier:@"MovieListViewCell"];
-    self.collectionView.backgroundColor = [UIColor clearColor];
+    //self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.refreshControl = [[UIRefreshControl alloc]init];
   //   self.refreshControl.attributedTitle = @"put to refresh";
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
-    [self.collectionView addSubview:self.refreshControl];
+   [self.collectionView addSubview:self.refreshControl];
     
 }
 -(void)RefreshViewControlEventValueChanged{
@@ -104,11 +114,68 @@
     return 1.0f;
 }
 
+-(void)addSearchBar{
+
+    if (!self.searchBar) {
+        self.searchBarBoundsY = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
+        self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0,self.searchBarBoundsY, [UIScreen mainScreen].bounds.size.width, 44)];
+        self.searchBar.searchBarStyle       = UISearchBarStyleMinimal;
+        self.searchBar.tintColor            = [UIColor whiteColor];
+        self.searchBar.barTintColor         = [UIColor whiteColor];
+        self.searchBar.delegate             = self;
+        self.searchBar.placeholder          = @"search here";
+        
+        [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor whiteColor]];
+    }
+    
+    if (![self.searchBar isDescendantOfView:self.view]) {
+        [self.collectionView addSubview:self.searchBar];
+    }
+
+}
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
+{
+    NSLog(@"searchBarShouldEndEditing!!");//self.searchBar.text
+    
+    return YES;
+}
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    //[self cancelSearching];
+    NSLog(@"searchBarCancelButtonClicked%@", searchBar.text);
+    //[self.collectionView reloadData];
+}
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    //self.searchBarActive = YES;
+       NSLog(@"searchBarSearchButtonClicked%@", searchBar.text);
+    [self.view endEditing:YES];
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    // we used here to set self.searchBarActive = YES
+    // but we'll not do that any more... it made problems
+    // it's better to set self.searchBarActive = YES when user typed something
+    [self.searchBar setShowsCancelButton:YES animated:YES];
+}
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    // this method is being called when search btn in the keyboard tapped
+    // we set searchBarActive = NO
+    // but no need to reloadCollectionView
+    //self.searchBarActive = NO;
+    [self.searchBar setShowsCancelButton:NO animated:YES];
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGSize result =  [[NibSizeCalculator sharedInstance] sizeForNibNamed:@"MovieListViewCell" withstyle:NibFixedHeightScaling];
-     return CGSizeMake(150 , 300);
     
+    
+    
+ //   CGSize test =  [[NibSizeCalculator sharedInstance] sizeForNibNamed:@"MovieListViewCell" withstyle:NibFixedHeightScaling];
+    CGSize test = CGSizeMake(([[UIScreen mainScreen]bounds].size.width/2) - 20.f, ([[UIScreen mainScreen]bounds].size.height/2 ));
+    
+    NSLog(@"test:height:%f" ,test.height);
+    NSLog(@"test::%f" ,test.width);
+    return test;
    // CGSize result2 = [CGSize alloc]ini
    // return result;
 }

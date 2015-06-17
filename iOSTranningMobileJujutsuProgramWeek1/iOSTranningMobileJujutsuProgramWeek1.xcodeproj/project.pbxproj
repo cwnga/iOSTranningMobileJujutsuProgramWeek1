@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B1B1143C92DDEDDB6A5A910C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8121861B58AFA33F2524A4C7 /* libPods.a */; };
+		F71821761B31924800A46D19 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F71821741B31924800A46D19 /* NavViewController.m */; };
+		F71821771B31924800A46D19 /* NavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71821751B31924800A46D19 /* NavViewController.xib */; };
 		F7C8FDED1B2FE9C50053F72D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FDEC1B2FE9C50053F72D /* main.m */; };
 		F7C8FDF01B2FE9C50053F72D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FDEF1B2FE9C50053F72D /* AppDelegate.m */; };
 		F7C8FDF31B2FE9C50053F72D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FDF21B2FE9C50053F72D /* ViewController.m */; };
@@ -50,6 +52,9 @@
 		059259CCEA005060B35AEBF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5ACE95A091347A226FA35340 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8121861B58AFA33F2524A4C7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F71821731B31924800A46D19 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		F71821741B31924800A46D19 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		F71821751B31924800A46D19 /* NavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavViewController.xib; sourceTree = "<group>"; };
 		F7C8FDE71B2FE9C50053F72D /* iOSTranningMobileJujutsuProgramWeek1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTranningMobileJujutsuProgramWeek1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C8FDEB1B2FE9C50053F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C8FDEC1B2FE9C50053F72D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +141,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F71821721B31922C00A46D19 /* NavView */ = {
+			isa = PBXGroup;
+			children = (
+				F71821731B31924800A46D19 /* NavViewController.h */,
+				F71821741B31924800A46D19 /* NavViewController.m */,
+				F71821751B31924800A46D19 /* NavViewController.xib */,
+			);
+			path = NavView;
+			sourceTree = "<group>";
+		};
 		F7C8FDDE1B2FE9C50053F72D = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +230,7 @@
 		F7C8FE1C1B2FEFC50053F72D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F71821721B31922C00A46D19 /* NavView */,
 				F7C8FE1D1B2FEFC50053F72D /* MovieDetail */,
 				F7C8FE1E1B2FEFC50053F72D /* MovieList */,
 				F7C8FE561B304A210053F72D /* BaseViewController.h */,
@@ -371,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C8FE601B306B8D0053F72D /* MovieDetailViewController.xib in Resources */,
+				F71821771B31924800A46D19 /* NavViewController.xib in Resources */,
 				F7C8FDF61B2FE9C50053F72D /* Main.storyboard in Resources */,
 				F7C8FE4A1B30451B0053F72D /* MovieListViewCell.xib in Resources */,
 				F7C8FDFB1B2FE9C50053F72D /* LaunchScreen.xib in Resources */,
@@ -440,6 +457,7 @@
 				F7C8FE221B2FEFC50053F72D /* MovieListViewController.m in Sources */,
 				F7C8FE3B1B3035C80053F72D /* RatingsJSONModel.m in Sources */,
 				F7C8FE381B3035150053F72D /* ReleaseDatesJSONModel.m in Sources */,
+				F71821761B31924800A46D19 /* NavViewController.m in Sources */,
 				F7C8FE261B300F100053F72D /* MovieListJSONModel.m in Sources */,
 				F7C8FE551B3049E70053F72D /* NibSizeCalculator.m in Sources */,
 				F7C8FE2F1B3033F50053F72D /* AbridgedCastJSONModel.m in Sources */,
