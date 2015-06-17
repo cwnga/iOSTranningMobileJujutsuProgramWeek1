@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *movieImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 
 @end
@@ -28,7 +29,9 @@
 
 - (void) setupView
 {
+    self.titleLabel.text = self.movieJSONModel.title;
     self.synopsisLabel.text = self.movieJSONModel.synopsis;
+    
     self.movieImageView.contentMode = UIViewContentModeCenter;
     [self.movieImageView sd_setImageWithURL:[NSURL URLWithString:self.movieJSONModel.posters.detailed]
                            placeholderImage:[UIImage imageNamed:@"placeholder.png"]

@@ -29,6 +29,7 @@
         self.data = movelists.movies;
         success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
         
     }];
     

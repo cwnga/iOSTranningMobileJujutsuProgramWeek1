@@ -40,6 +40,8 @@
         success(operation, movelists);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        
+        failure(operation, error);
     }];
 
 }
@@ -69,6 +71,7 @@
         success(operation, movelists);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        failure(operation, error);
     }];
     
 }

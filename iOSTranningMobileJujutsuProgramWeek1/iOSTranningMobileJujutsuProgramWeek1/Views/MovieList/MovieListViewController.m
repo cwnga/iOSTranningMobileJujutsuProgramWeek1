@@ -74,7 +74,9 @@
         [self.view makeToast:@"Error!"
                     duration:3.0
                     position:CSToastPositionBottom
-                       title:@""];
+                       title:@"Error!!!!!!!!!!!!!!!!!!!!"];
+                  [self.refreshControl endRefreshing];
+            [SVProgressHUD dismiss];
     }];
 }
 
@@ -224,7 +226,8 @@
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    MovieJSONModel *movieJSONModel = (MovieJSONModel *)self.movieListDataStore.data[indexPath.row];
+    MovieJSONModel *movieJSONModel = (MovieJSONModel *)self.movieDataList[indexPath.row];
+    NSLog(@"movieJSONModel::%@", movieJSONModel);
     MovieDetailViewController *vc = [[NSClassFromString(@"MovieDetailViewController") alloc] init];
     vc.movieJSONModel = movieJSONModel;
     [self.navigationController pushViewController:vc animated:YES];

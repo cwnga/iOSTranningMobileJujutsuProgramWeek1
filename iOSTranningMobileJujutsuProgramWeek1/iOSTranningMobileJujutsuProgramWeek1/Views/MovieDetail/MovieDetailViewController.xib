@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="movieImageView" destination="dt2-rG-sps" id="fXZ-TZ-oeu"/>
                 <outlet property="synopsisLabel" destination="WTk-ZT-ie4" id="rSu-vX-HW7"/>
+                <outlet property="titleLabel" destination="mN8-tA-YQx" id="7OM-LD-1nF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,12 +19,13 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-rG-sps">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAG-rL-0ya">
                     <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTk-ZT-ie4">
-                            <rect key="frame" x="8" y="8" width="300" height="52"/>
+                            <rect key="frame" x="8" y="39" width="300" height="52"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="ln0-2e-ijS"/>
                             </constraints>
@@ -37,20 +39,49 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="D2c-7M-86h"/>
                         <constraint firstItem="WTk-ZT-ie4" firstAttribute="leading" secondItem="wAG-rL-0ya" secondAttribute="leading" constant="8" id="Xck-4o-1fh"/>
-                        <constraint firstAttribute="trailing" secondItem="WTk-ZT-ie4" secondAttribute="trailing" constant="8" id="iYt-pH-z32"/>
-                        <constraint firstItem="WTk-ZT-ie4" firstAttribute="top" secondItem="wAG-rL-0ya" secondAttribute="top" constant="8" id="jkb-50-v2a"/>
+                        <constraint firstAttribute="trailing" secondItem="WTk-ZT-ie4" secondAttribute="trailing" constant="292" id="iYt-pH-z32"/>
+                        <constraint firstItem="WTk-ZT-ie4" firstAttribute="top" secondItem="wAG-rL-0ya" secondAttribute="top" constant="39" id="jkb-50-v2a"/>
                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WTk-ZT-ie4" secondAttribute="bottom" constant="8" id="ufK-Yz-eyh"/>
                     </constraints>
                 </scrollView>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lap-Zr-ijh">
+                    <rect key="frame" x="0.0" y="279" width="600" height="21"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN8-tA-YQx">
+                            <rect key="frame" x="0.0" y="0.0" width="54" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="nu3-mD-GXf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="WkR-rr-23Z"/>
+                        <constraint firstItem="mN8-tA-YQx" firstAttribute="top" secondItem="lap-Zr-ijh" secondAttribute="top" id="jSV-Lu-afP"/>
+                        <constraint firstItem="mN8-tA-YQx" firstAttribute="leading" secondItem="lap-Zr-ijh" secondAttribute="leading" id="knj-dL-Sea"/>
+                        <constraint firstAttribute="bottom" secondItem="mN8-tA-YQx" secondAttribute="bottom" id="pa8-Dp-jDO"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="WkR-rr-23Z"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="dt2-rG-sps" secondAttribute="trailing" id="0NH-hi-kiG"/>
                 <constraint firstItem="dt2-rG-sps" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="D8q-Mp-8rp"/>
+                <constraint firstItem="wAG-rL-0ya" firstAttribute="top" secondItem="lap-Zr-ijh" secondAttribute="bottom" id="Rz5-EX-prO"/>
                 <constraint firstAttribute="trailing" secondItem="wAG-rL-0ya" secondAttribute="trailing" id="Vv1-8q-SQ8"/>
                 <constraint firstItem="dt2-rG-sps" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y3x-N4-ZWN"/>
                 <constraint firstAttribute="bottom" secondItem="wAG-rL-0ya" secondAttribute="bottom" id="gGO-PH-Soi"/>
+                <constraint firstItem="lap-Zr-ijh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hWz-E4-9ZH"/>
                 <constraint firstAttribute="bottom" secondItem="dt2-rG-sps" secondAttribute="bottom" id="kul-BX-mtu"/>
+                <constraint firstAttribute="trailing" secondItem="lap-Zr-ijh" secondAttribute="trailing" id="m7C-qx-GwU"/>
                 <constraint firstItem="wAG-rL-0ya" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zgp-l1-PMf"/>
             </constraints>
         </view>
