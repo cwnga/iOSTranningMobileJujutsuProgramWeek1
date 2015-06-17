@@ -11,11 +11,13 @@
 #import "MovieListDataStore.h"
 #import "MovieJSONModel.h"
 #import "MovieDetailViewController.h"
+#import <SVProgressHUD.h>
 
 @interface MovieListViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) MovieListDataStore *movieListDataStore;
-
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *viewToggle;
 @end
 
 @implementation MovieListViewController
@@ -28,22 +30,34 @@
     self.movieListDataStore = [[MovieListDataStore alloc]init];
 
         NSLog(@"parameter parameter ::%@", @"hihi");
-    [self.movieListDataStore loadNext:^(id responseObject) {
-    [self.collectionView reloadData];
-           NSLog(@"parameter parameter ::%@", @"hihi3");
-        
-    } failure:^(NSError *error) {
-        // [self.collectionView reloadData];
-           NSLog(@"parameter parameter ::%@", @"hih4");
-        
-    }];
-    
+   // [[UITabBar appearance] setTintColor:self.viewToggle.tintColor];
+    [SVProgressHUD setBackgroundColor:self.viewToggle.tintColor];
+   
+    [self refreshData];
   
     
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)refreshData
+{
+    [SVProgressHUD show];
+    
+    [self.movieListDataStore loadNext:^(id responseObject) {
+        [self.collectionView reloadData];
+        [SVProgressHUD dismiss];
+        NSLog(@"parameter parameter ::%@", @"hihi3");
+        if (!self.refreshControl.isRefreshing) {
+            [SVProgressHUD dismiss];
+        } else {
+            [self.refreshControl endRefreshing];
+        }
+    } failure:^(NSError *error) {
+        // [self.collectionView reloadData];
+        NSLog(@"parameter parameter ::%@", @"hih4");
+    }];
 
+}
 
 - (void)setupView
 {
@@ -52,6 +66,14 @@
     self.collectionView.backgroundColor = [UIColor clearColor];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.refreshControl = [[UIRefreshControl alloc]init];
+  //   self.refreshControl.attributedTitle = @"put to refresh";
+    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:self.refreshControl];
+    
+}
+-(void)RefreshViewControlEventValueChanged{
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"刷新中..."];
     
 }
 

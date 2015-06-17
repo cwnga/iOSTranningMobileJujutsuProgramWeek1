@@ -31,7 +31,7 @@
      MovieListJSONModel *movelists = (MovieListJSONModel*) responseObject;
         self.data = movelists.movies;
         NSLog(@"data::%@", self.data);
-        self.startPage = self.startPage + 20;
+        //self.startPage = self.startPage + 20;
         success(responseObject);
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
