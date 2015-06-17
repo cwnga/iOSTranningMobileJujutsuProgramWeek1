@@ -10,6 +10,8 @@
 		B1B1143C92DDEDDB6A5A910C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8121861B58AFA33F2524A4C7 /* libPods.a */; };
 		F71821761B31924800A46D19 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F71821741B31924800A46D19 /* NavViewController.m */; };
 		F71821771B31924800A46D19 /* NavViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71821751B31924800A46D19 /* NavViewController.xib */; };
+		F718217A1B31B12C00A46D19 /* BaseDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F71821791B31B12C00A46D19 /* BaseDataStore.m */; };
+		F718217E1B31B21E00A46D19 /* MovieSearchDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F718217D1B31B21E00A46D19 /* MovieSearchDataStore.m */; };
 		F7C8FDED1B2FE9C50053F72D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FDEC1B2FE9C50053F72D /* main.m */; };
 		F7C8FDF01B2FE9C50053F72D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FDEF1B2FE9C50053F72D /* AppDelegate.m */; };
 		F7C8FDF31B2FE9C50053F72D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C8FDF21B2FE9C50053F72D /* ViewController.m */; };
@@ -55,6 +57,10 @@
 		F71821731B31924800A46D19 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		F71821741B31924800A46D19 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
 		F71821751B31924800A46D19 /* NavViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavViewController.xib; sourceTree = "<group>"; };
+		F71821781B31B12C00A46D19 /* BaseDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataStore.h; sourceTree = "<group>"; };
+		F71821791B31B12C00A46D19 /* BaseDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataStore.m; sourceTree = "<group>"; };
+		F718217C1B31B21E00A46D19 /* MovieSearchDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieSearchDataStore.h; sourceTree = "<group>"; };
+		F718217D1B31B21E00A46D19 /* MovieSearchDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieSearchDataStore.m; sourceTree = "<group>"; };
 		F7C8FDE71B2FE9C50053F72D /* iOSTranningMobileJujutsuProgramWeek1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSTranningMobileJujutsuProgramWeek1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C8FDEB1B2FE9C50053F72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C8FDEC1B2FE9C50053F72D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -223,6 +229,10 @@
 				F7C8FE3C1B3039730053F72D /* Jsonmodel */,
 				F7C8FE591B305B750053F72D /* MovieListDataStore.h */,
 				F7C8FE5A1B305B750053F72D /* MovieListDataStore.m */,
+				F71821781B31B12C00A46D19 /* BaseDataStore.h */,
+				F71821791B31B12C00A46D19 /* BaseDataStore.m */,
+				F718217C1B31B21E00A46D19 /* MovieSearchDataStore.h */,
+				F718217D1B31B21E00A46D19 /* MovieSearchDataStore.m */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -443,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F718217A1B31B12C00A46D19 /* BaseDataStore.m in Sources */,
 				F7C8FE5F1B306B8D0053F72D /* MovieDetailViewController.m in Sources */,
 				F7C8FE5B1B305B750053F72D /* MovieListDataStore.m in Sources */,
 				F7C8FE291B300F8A0053F72D /* MovieJSONModel.m in Sources */,
@@ -452,6 +463,7 @@
 				F7C8FE2C1B3010720053F72D /* LinkJSONModel.m in Sources */,
 				F7C8FE491B30451B0053F72D /* MovieListViewCell.m in Sources */,
 				F7C8FE521B3049CF0053F72D /* CalculatorHelper.m in Sources */,
+				F718217E1B31B21E00A46D19 /* MovieSearchDataStore.m in Sources */,
 				F7C8FE581B304A210053F72D /* BaseViewController.m in Sources */,
 				F7C8FDED1B2FE9C50053F72D /* main.m in Sources */,
 				F7C8FE221B2FEFC50053F72D /* MovieListViewController.m in Sources */,

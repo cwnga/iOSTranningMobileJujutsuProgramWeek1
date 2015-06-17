@@ -33,10 +33,10 @@
     NSLog(@"parameters::%@", parameters);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+     //   NSLog(@"JSON: %@", responseObject);
         NSError* err = nil;
         MovieListJSONModel *movelists = [[MovieListJSONModel alloc] initWithDictionary:responseObject error:&err];
-        NSLog(@"movelists %@", movelists);
+      
         success(operation, movelists);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -44,4 +44,32 @@
 
 }
 
+
+/**
+ *  <#Description#>
+ *
+ *  @param parameters q, page_limit, page description
+ *  @param success    success description
+ *  @param failure    failure description
+ */
+- (void)searchMovieList:(NSMutableDictionary *)parameters success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
+             failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
+{
+    NSString *movieListPath = @"/api/public/v1.0/movies.json";
+    NSString *url = [self.host stringByAppendingString:movieListPath];
+    
+    parameters[@"apikey"] = self.apikey;
+    NSLog(@"url::%@", url);
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        NSError* err = nil;
+        MovieListJSONModel *movelists = [[MovieListJSONModel alloc] initWithDictionary:responseObject error:&err];
+// NSLog(@"movelists %@", movelists);
+        success(operation, movelists);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+}
 @end

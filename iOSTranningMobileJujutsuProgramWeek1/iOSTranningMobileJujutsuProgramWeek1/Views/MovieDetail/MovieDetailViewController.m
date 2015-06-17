@@ -36,7 +36,7 @@
                                       if (!error) {
                                           self.movieImageView.image = image;
                                           self.movieImageView.contentMode = UIViewContentModeScaleAspectFill;
-                                    
+                                          
                                       }
                                       
                                   }];

@@ -13,27 +13,21 @@
 - (instancetype) init
 {
     self = [super init];
-    self.movieApiClient = [[MovieApiClient alloc]init];
     self.startPage = 20;
-    self.data = [[NSArray alloc]initWithArray:@[]];
     return self;
 }
 - (void)loadNext:(void (^)(id responseObject))success
              failure:(void (^)(NSError *error))failure
 {
      NSLog(@"parameter parameter ::%@", @"hihi2");
-    NSMutableDictionary *parameter = [NSMutableDictionary dictionaryWithDictionary:
-  @{
-                                @"limit": @(self.startPage)
+    NSMutableDictionary *parameter = [NSMutableDictionary dictionaryWithDictionary:@{
+                                @"limit": @(self.perPageCount)
                                 }];
     NSLog(@"parameter parameter ::%@", parameter);
     [self.movieApiClient getMovieList:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
      MovieListJSONModel *movelists = (MovieListJSONModel*) responseObject;
         self.data = movelists.movies;
-        NSLog(@"data::%@", self.data);
-        //self.startPage = self.startPage + 20;
         success(responseObject);
-        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];

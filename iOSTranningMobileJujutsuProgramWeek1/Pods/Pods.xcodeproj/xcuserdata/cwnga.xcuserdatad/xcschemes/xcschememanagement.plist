@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Toast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>162B51A014487CF99F37E16E</key>
+		<key>0734E8C399B9C7E8F25EE573</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F3ABA5F41240368B9C43CD8</key>
+		<key>3D254D1D58FB997AD572B06C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61A4FEBA676042A38F371B11</key>
+		<key>87ED3B2C6E222D9986076390</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>71EFED5B01E411A0EB447E02</key>
+		<key>D9938EEBFFA0F83A0B5DCF8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BFE29C21F1C6CCEC3B9E91BC</key>
+		<key>E655368CCDE9C024CC4E528B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E68134B376DED46BA030CBC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -11,11 +11,15 @@
 #import "MovieListDataStore.h"
 #import "MovieJSONModel.h"
 #import "MovieDetailViewController.h"
+#import "MovieSearchDataStore.h"
 #import <SVProgressHUD.h>
 
 @interface MovieListViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) MovieListDataStore *movieListDataStore;
+@property (strong, nonatomic) MovieSearchDataStore *movieSearchDataStore;
+@property (assign, nonatomic) BOOL *isSearch;
+@property (strong, nonatomic) NSArray *movieDataList;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (nonatomic)        float          searchBarBoundsY;
 @property (nonatomic,strong) UISearchBar        *searchBar;
@@ -34,9 +38,9 @@
     
     [self setupView];
     self.movieListDataStore = [[MovieListDataStore alloc]init];
+    self.movieSearchDataStore = [[MovieSearchDataStore alloc]init];
 
-        NSLog(@"parameter parameter ::%@", @"hihi");
-   // [[UITabBar appearance] setTintColor:self.viewToggle.tintColor];
+    // [[UITabBar appearance] setTintColor:self.viewToggle.tintColor];
     //[SVProgressHUD setBackgroundColor:self.viewToggle.tintColor];
    
     [self refreshData];
@@ -48,8 +52,16 @@
 - (void)refreshData
 {
     [SVProgressHUD show];
-    
-    [self.movieListDataStore loadNext:^(id responseObject) {
+    BaseDataStore *dataStore ;
+    if (self.isSearch == NO) {
+        dataStore = self.movieListDataStore;
+
+    } else {
+        dataStore = self.movieSearchDataStore;
+    }
+
+    [dataStore loadNext:^(id responseObject) {
+        self.movieDataList = dataStore.data;
         [self.collectionView reloadData];
         [SVProgressHUD dismiss];
         NSLog(@"parameter parameter ::%@", @"hihi3");
@@ -59,10 +71,11 @@
             [self.refreshControl endRefreshing];
         }
     } failure:^(NSError *error) {
-        // [self.collectionView reloadData];
-        NSLog(@"parameter parameter ::%@", @"hih4");
+        [self.view makeToast:@"Error!"
+                    duration:3.0
+                    position:CSToastPositionBottom
+                       title:@""];
     }];
-
 }
 
 - (void)setupView
@@ -77,14 +90,12 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.refreshControl = [[UIRefreshControl alloc]init];
-  //   self.refreshControl.attributedTitle = @"put to refresh";
+    //   self.refreshControl.attributedTitle = @"put to refresh";
     [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
-   [self.collectionView addSubview:self.refreshControl];
-    
+    [self.collectionView addSubview:self.refreshControl];
 }
 -(void)RefreshViewControlEventValueChanged{
     self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"刷新中..."];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,8 +111,8 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSLog(@"numberOfItemsInSection::%@", self.movieListDataStore.data);
-    return [self.movieListDataStore.data count];
+    
+    return [self.movieDataList count];
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -118,7 +129,7 @@
 
     if (!self.searchBar) {
         self.searchBarBoundsY = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-        self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0,self.searchBarBoundsY, [UIScreen mainScreen].bounds.size.width, 44)];
+        self.searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width, 44)];
         self.searchBar.searchBarStyle       = UISearchBarStyleMinimal;
         self.searchBar.tintColor            = [UIColor whiteColor];
         self.searchBar.barTintColor         = [UIColor whiteColor];
@@ -127,12 +138,13 @@
         
         [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor whiteColor]];
     }
-    
-    if (![self.searchBar isDescendantOfView:self.view]) {
         [self.collectionView addSubview:self.searchBar];
+    if (![self.searchBar isDescendantOfView:self.view]) {
+       // [self.collectionView addSubview:self.searchBar];
     }
 
 }
+
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
 {
     NSLog(@"searchBarShouldEndEditing!!");//self.searchBar.text
@@ -144,12 +156,16 @@
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
     //[self cancelSearching];
     NSLog(@"searchBarCancelButtonClicked%@", searchBar.text);
+    self.isSearch = NO;
     //[self.collectionView reloadData];
 }
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     //self.searchBarActive = YES;
        NSLog(@"searchBarSearchButtonClicked%@", searchBar.text);
+    self.isSearch = YES;
+    self.movieSearchDataStore.keyword = searchBar.text;
     [self.view endEditing:YES];
+    [self refreshData];
 }
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     // we used here to set self.searchBarActive = YES
@@ -186,7 +202,7 @@
     
     MovieListViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieListViewCell" forIndexPath:indexPath];
     
-    MovieJSONModel *move = self.movieListDataStore.data[indexPath.row];
+    MovieJSONModel *move = self.movieDataList[indexPath.row];
     
     cell.titleLabel.text = move.title;
     cell.rationLabel.text  = move.ratings.criticsScore;
